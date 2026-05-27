@@ -3,7 +3,7 @@
 # 👨‍💻 Suraj Dobale — Full Stack Java Developer
 
 [![GitHub](https://img.shields.io/badge/GitHub-SURYaDob-6c63ff?style=for-the-badge&logo=github)](https://github.com/SURYaDob)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-portfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-porfolio)
 [![Resume](https://img.shields.io/badge/Resume-ATS_Optimized-ff6b6b?style=for-the-badge&logo=adobeacrobatreader)](RESUME_ATS.md)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/suraj-dobale)
 
@@ -75,7 +75,7 @@ For a quick preview in the browser:
 
 ## 🔗 Quick Links
 
-- **Portfolio Website:** [SURYaDob.github.io/resume-portfolio](https://SURYaDob.github.io/resume-portfolio)
+- **Portfolio Website:** [SURYaDob.github.io/resume-porfolio](https://SURYaDob.github.io/resume-porfolio)
 - **GitHub Profile:** [github.com/SURYaDob](https://github.com/SURYaDob)
 - **Email:** [surajdobale29@gmail.com](mailto:surajdobale29@gmail.com)
 - **Phone:** +91 9172567835

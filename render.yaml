@@ -7,7 +7,7 @@ services:
     runtime: java
     repo: https://github.com/SURYaDob/resume-porfolio
     rootDir: backend
-    buildCommand: ./mvnw clean package -DskipTests -Dspring.profiles.active=prod
+    buildCommand: chmod +x ./mvnw && ./mvnw clean package -DskipTests -Dspring.profiles.active=prod
     startCommand: java -jar target/portfolio-backend-1.0.0.jar
     envVars:
       - key: SPRING_PROFILES_ACTIVE

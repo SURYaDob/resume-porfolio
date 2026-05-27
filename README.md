@@ -13,6 +13,18 @@
 
 ---
 
+## 📸 Portfolio Preview
+
+<div align="center">
+  <a href="https://SURYaDob.github.io/resume-porfolio" target="_blank" rel="noopener noreferrer">
+    <img src="screenshots/full-page.png" alt="Suraj Dobale Portfolio - Full Preview" width="95%" style="border-radius: 12px; border: 1px solid rgba(108, 99, 255, 0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3);" />
+  </a>
+  <br/>
+  <sub>✨ Click the image to visit the live portfolio</sub>
+</div>
+
+<br/>
+
 ## 📋 About This Repository
 
 This repository contains my professional portfolio website and ATS-optimized resume. It serves as a central hub for recruiters and hiring managers to evaluate my skills, experience, and projects as a **Full Stack Java Developer**.

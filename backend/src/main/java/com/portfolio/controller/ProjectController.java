@@ -76,7 +76,7 @@ public class ProjectController {
                 "phone", "+91 9172567835",
                 "location", "Nagpur, Maharashtra, India",
                 "github", "https://github.com/SURYaDob",
-                "linkedin", "https://linkedin.com/in/suraj-dobale",
+                "linkedin", "https://www.linkedin.com/in/suraj-dobale-b713b91a6/",
                 "certification", "PG-DAC (CDAC) — IACSD Akurdi"
         ));
     }

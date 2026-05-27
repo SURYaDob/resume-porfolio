@@ -5,7 +5,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-SURYaDob-6c63ff?style=for-the-badge&logo=github)](https://github.com/SURYaDob)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-porfolio)
 [![Resume](https://img.shields.io/badge/Resume-Download-ff6b6b?style=for-the-badge&logo=microsoftword)](Suraj_Dobale_Resume.docx)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/suraj-dobale)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/suraj-dobale-b713b91a6/)
 
 **Java · Spring Boot · Hibernate · MySQL · HTML/CSS · JavaScript**
 
@@ -75,7 +75,7 @@ Download my resume in MS Word format:
 I'm actively seeking **Full Stack Java Developer** opportunities. If you're a recruiter or hiring manager, please feel free to reach out!
 
 - 📧 **Email:** [surajdobale29@gmail.com](mailto:surajdobale29@gmail.com)
-- 💼 **LinkedIn:** [linkedin.com/in/suraj-dobale](https://linkedin.com/in/suraj-dobale)
+- 💼 **LinkedIn:** [linkedin.com/in/suraj-dobale-b713b91a6](https://www.linkedin.com/in/suraj-dobale-b713b91a6/)
 - 🐙 **GitHub:** [github.com/SURYaDob](https://github.com/SURYaDob)
 
 ---

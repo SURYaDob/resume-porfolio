@@ -29,12 +29,12 @@ public class ProjectController {
 
         projects.add(new Project("CDAC Website & Application",
                 "A responsive institutional website with backend logic, MySQL database integration, and modular MVC architecture for efficient workflow management and data persistence.",
-                "🌐", "https://github.com/SURYaDob",
+                "🌐", "https://github.com/SURYaDob/enterprise",
                 "Java, Spring Boot, MySQL, HTML, CSS, MVC", 2));
 
         projects.add(new Project("Laundry Management System",
                 "A web-based operational workflow system for managing laundry orders, customer records, billing, and order tracking with full CRUD functionality and JDBC integration.",
-                "🏠", "https://github.com/SURYaDob",
+                "🏠", "https://github.com/SURYaDob/laundry-system",
                 "Java, JDBC, MySQL, HTML, CSS, Servlets", 3));
 
         projects.add(new Project("Student Management System",

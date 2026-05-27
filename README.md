@@ -4,7 +4,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-SURYaDob-6c63ff?style=for-the-badge&logo=github)](https://github.com/SURYaDob)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-porfolio)
-[![Resume](https://img.shields.io/badge/Resume-ATS_Optimized-ff6b6b?style=for-the-badge&logo=adobeacrobatreader)](RESUME_ATS.md)
+[![Resume](https://img.shields.io/badge/Resume-Download-ff6b6b?style=for-the-badge&logo=microsoftword)](Suraj_Dobale_Resume.docx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/suraj-dobale)
 
 **Java · Spring Boot · Hibernate · MySQL · HTML/CSS · JavaScript**
@@ -24,8 +24,7 @@ This repository contains my professional portfolio website and ATS-optimized res
 | `index.html` | Interactive portfolio website (dark theme, particle effects, responsive) |
 | `css/style.css` | Complete design system with animations and responsive layout |
 | `js/main.js` | Interactive features (particles, typing effect, scroll animations, dark mode) |
-| `RESUME_ATS.md` | **ATS-Optimized Resume** — clean, parsable format for Applicant Tracking Systems |
-| `Suraj_Dobale_Resume.docx` | Original MS Word resume (ATS-friendly .docx format) |
+| `Suraj_Dobale_Resume.docx` | MS Word resume — ready to download and edit |
 
 ---
 
@@ -55,21 +54,10 @@ This repository contains my professional portfolio website and ATS-optimized res
 
 ---
 
-## 📄 ATS-Optimized Resume
+## 📄 Resume
 
-For the best ATS compatibility, use the **MS Word (.docx)** version:  
+Download my resume in MS Word format:  
 📄 [`Suraj_Dobale_Resume.docx`](Suraj_Dobale_Resume.docx)
-
-For a quick preview in the browser:  
-📝 [`RESUME_ATS.md`](RESUME_ATS.md)
-
-### ATS Optimization Checklist ✅
-- [x] Standard section headings (Summary, Skills, Experience, Education, Projects)
-- [x] Single-column reverse-chronological layout
-- [x] Industry-standard keywords for Full Stack Java Developer
-- [x] Clean, parsable formatting — no tables, columns, or graphics
-- [x] Action verbs and quantified achievements
-- [x] .docx format for maximum ATS compatibility
 
 ---
 

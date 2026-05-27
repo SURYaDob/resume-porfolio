@@ -122,7 +122,26 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
-  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ----- Smooth Theme Switching -----
+   Activated via JS whenever the user clicks the theme toggle.
+   Ensures all themed properties (backgrounds, colors, borders, shadows)
+   transition gracefully between dark/light/galaxy modes.
+*/
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition:
+    background 0.6s ease,
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    border-top-color 0.6s ease,
+    border-bottom-color 0.6s ease,
+    box-shadow 0.6s ease,
+    opacity 0.6s ease !important;
 }
 
 a {
@@ -252,7 +271,7 @@ ul {
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 0.8s ease;
 }
 
 [data-theme="galaxy"] #galaxy-canvas {

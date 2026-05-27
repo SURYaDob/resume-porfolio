@@ -652,7 +652,16 @@ class ThemeToggle {
   applyTheme() {
     const theme = this.themes[this.currentIndex];
     this.icon.textContent = this.icons[this.currentIndex];
+
+    // Activate smooth CSS transition for all themed properties
+    document.documentElement.classList.add('theme-switching');
     document.documentElement.setAttribute('data-theme', theme);
+
+    // Remove transition guard after animation completes
+    // so hover/active transitions resume normally
+    setTimeout(() => {
+      document.documentElement.classList.remove('theme-switching');
+    }, 700);
   }
 }
 

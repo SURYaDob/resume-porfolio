@@ -331,7 +331,7 @@ class MouseFollower {
     };
     animate();
 
-    document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .cert-card, .avatar-frame').forEach((el) => {
+    document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .avatar-frame').forEach((el) => {
       el.addEventListener('mouseenter', () => {
         this.follower.style.width = '36px';
         this.follower.style.height = '36px';
@@ -715,11 +715,6 @@ class TiltEffect {
       this.addTilt(card, { intensity: 15, translateY: -8, scale: 1.02 });
     });
 
-    // Certificate cards — moderate tilt
-    document.querySelectorAll('.cert-card').forEach((card) => {
-      this.addTilt(card, { intensity: 20, translateY: -4, scale: 1.02 });
-    });
-
     // Avatar frame — gentle tilt with extra glow depth
     const avatar = document.querySelector('.avatar-frame');
     if (avatar) {
@@ -767,76 +762,6 @@ class TiltEffect {
         element.style.transition = '';
       }, 500);
     });
-  }
-}
-
-// =============================================
-// CERTIFICATE LIGHTBOX
-// =============================================
-class CertificateLightbox {
-  constructor() {
-    this.lightbox = document.getElementById('certLightbox');
-    if (!this.lightbox) return;
-
-    this.closeBtn = this.lightbox.querySelector('.cert-lightbox-close');
-    this.titleEl = this.lightbox.querySelector('.cert-lightbox-title');
-    this.subtitleEl = this.lightbox.querySelector('.cert-lightbox-subtitle');
-    this.linksContainer = this.lightbox.querySelector('.cert-lightbox-links');
-
-    this.init();
-  }
-
-  init() {
-    document.querySelectorAll('.cert-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        const title = card.querySelector('h4')?.textContent || 'Certificate';
-        const subtitle = card.querySelector('p')?.textContent || '';
-        const link = card.querySelector('a')?.getAttribute('href') || '';
-        const linkText = card.querySelector('a')?.textContent?.trim() || 'View Document';
-
-        this.titleEl.textContent = title;
-        this.subtitleEl.textContent = subtitle;
-
-        this.linksContainer.innerHTML = '';
-        if (link) {
-          const a = document.createElement('a');
-          a.href = link;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.className = 'btn btn-primary btn-small';
-          a.innerHTML = `<span class="btn-text">📄 ${linkText}</span>`;
-          this.linksContainer.appendChild(a);
-        }
-
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'btn btn-outline btn-small';
-        closeBtn.innerHTML = '<span class="btn-text">✕ Close</span>';
-        closeBtn.addEventListener('click', () => this.close());
-        this.linksContainer.appendChild(closeBtn);
-
-        this.open();
-      });
-    });
-
-    this.closeBtn?.addEventListener('click', () => this.close());
-
-    this.lightbox.addEventListener('click', (e) => {
-      if (e.target === this.lightbox) this.close();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') this.close();
-    });
-  }
-
-  open() {
-    this.lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  close() {
-    this.lightbox.classList.remove('open');
-    document.body.style.overflow = '';
   }
 }
 
@@ -894,7 +819,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new ThemeToggle();
   new ButtonRipple();
   new TiltEffect();
-  new CertificateLightbox();
   new SmoothAnchors();
 
 

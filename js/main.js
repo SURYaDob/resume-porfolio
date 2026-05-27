@@ -463,28 +463,42 @@ class ContactForm {
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
 
-      // Simulate form submission (replace with actual form action)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      try {
+        const data = new FormData(this.form);
+        const response = await fetch(this.form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      // Show success message
-      const formContainer = this.form.parentElement;
-      const successMsg = document.createElement('div');
-      successMsg.style.cssText = `
-        text-align: center;
-        padding: 40px;
-        background: var(--bg-card);
-        border-radius: var(--border-radius);
-        border: 1px solid rgba(108, 99, 255, 0.2);
-      `;
-      successMsg.innerHTML = `
-        <div style="font-size: 3rem; margin-bottom: 16px;">🎉</div>
-        <h3>Message Sent Successfully!</h3>
-        <p style="color: var(--text-secondary); margin-top: 8px;">Thank you for reaching out. I'll get back to you soon.</p>
-      `;
-
-      this.form.innerHTML = '';
-      this.form.appendChild(successMsg);
-      submitBtn.disabled = false;
+        if (response.ok) {
+          // Show success message
+          const formContainer = this.form.parentElement;
+          const successMsg = document.createElement('div');
+          successMsg.style.cssText = `
+            text-align: center;
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(108, 99, 255, 0.2);
+          `;
+          successMsg.innerHTML = `
+            <div style="font-size: 3rem; margin-bottom: 16px;">🎉</div>
+            <h3>Message Sent Successfully!</h3>
+            <p style="color: var(--text-secondary); margin-top: 8px;">Thank you for reaching out. I'll get back to you soon.</p>
+          `;
+          this.form.innerHTML = '';
+          this.form.appendChild(successMsg);
+        } else {
+          alert('Something went wrong. Please email me directly at surajdobale29@gmail.com.');
+          submitBtn.textContent = originalText;
+        }
+      } catch (err) {
+        alert('Something went wrong. Please email me directly at surajdobale29@gmail.com.');
+        submitBtn.textContent = originalText;
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   }
 }

@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
   if (preloader) {
     preloader.classList.add('hidden');
     setTimeout(() => {
-      // Ensure preloader is removed after transition
       if (preloader.parentNode) preloader.style.display = 'none';
     }, 700);
   }
@@ -90,7 +89,6 @@ class ParticleSystem {
       if (p.y > this.canvas.height) p.y = 0;
       if (p.y < 0) p.y = this.canvas.height;
 
-      // Mouse interaction
       if (this.mouse.x !== null && this.mouse.y !== null) {
         const dx = this.mouse.x - p.x;
         const dy = this.mouse.y - p.y;
@@ -107,7 +105,6 @@ class ParticleSystem {
       this.ctx.fillStyle = `${p.color}${p.opacity})`;
       this.ctx.fill();
 
-      // Draw connections
       for (let j = i + 1; j < this.particles.length; j++) {
         const dx = p.x - this.particles[j].x;
         const dy = p.y - this.particles[j].y;
@@ -233,18 +230,15 @@ class ScrollReveal {
           if (entry.isIntersecting) {
             const el = entry.target;
 
-            // Handle stagger-children containers
             if (el.classList.contains('stagger-children')) {
               el.classList.add('visible');
             }
-            // Handle skill bars
             else if (el.classList.contains('skill-bar-fill')) {
               const width = el.dataset.width || '85';
               setTimeout(() => {
                 el.style.width = width + '%';
               }, 300);
             }
-            // Handle regular reveal elements
             else {
               el.classList.add('visible');
             }
@@ -258,12 +252,10 @@ class ScrollReveal {
   }
 
   init() {
-    // Observe all reveal elements
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach((el) => {
       this.observer.observe(el);
     });
 
-    // Observe skill bars
     document.querySelectorAll('.skill-bar-fill').forEach((el) => {
       this.observer.observe(el);
     });
@@ -339,7 +331,6 @@ class MouseFollower {
     };
     animate();
 
-    // Enlarge on interactive elements
     document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .cert-card').forEach((el) => {
       el.addEventListener('mouseenter', () => {
         this.follower.style.width = '36px';
@@ -372,13 +363,11 @@ class Navigation {
   }
 
   init() {
-    // Scroll effect
     window.addEventListener('scroll', () => {
       this.navbar.classList.toggle('scrolled', window.scrollY > 50);
       this.updateActiveLink();
     });
 
-    // Hamburger toggle
     if (this.hamburger) {
       this.hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -386,21 +375,18 @@ class Navigation {
       });
     }
 
-    // Close menu on link click
     this.links.forEach((link) => {
       link.addEventListener('click', () => {
         this.closeMenu();
       });
     });
 
-    // Close on click outside
     document.addEventListener('click', (e) => {
       if (this.isOpen && !this.navbar.contains(e.target)) {
         this.closeMenu();
       }
     });
 
-    // Close on escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isOpen) {
         this.closeMenu();
@@ -455,26 +441,20 @@ class ThemeToggle {
   }
 
   init() {
-    // Detect system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
 
-    // Use saved theme, or system preference, default to dark
     this.isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
 
-    // Apply theme
     this.applyTheme();
 
-    // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      // Only update if user hasn't set a manual preference
       if (!localStorage.getItem('theme')) {
         this.isDark = e.matches;
         this.applyTheme();
       }
     });
 
-    // Toggle on click
     this.toggle?.addEventListener('click', () => {
       this.isDark = !this.isDark;
       localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
@@ -487,8 +467,6 @@ class ThemeToggle {
     document.documentElement.setAttribute('data-theme', this.isDark ? 'dark' : 'light');
   }
 }
-
-// Smooth scroll is handled by CSS `scroll-behavior: smooth`
 
 // =============================================
 // BUTTON RIPPLE EFFECT
@@ -563,7 +541,6 @@ class CertificateLightbox {
   }
 
   init() {
-    // Open lightbox on cert card click
     document.querySelectorAll('.cert-card').forEach((card) => {
       card.addEventListener('click', () => {
         const title = card.querySelector('h4')?.textContent || 'Certificate';
@@ -574,7 +551,6 @@ class CertificateLightbox {
         this.titleEl.textContent = title;
         this.subtitleEl.textContent = subtitle;
 
-        // Update links
         this.linksContainer.innerHTML = '';
         if (link) {
           const a = document.createElement('a');
@@ -596,15 +572,12 @@ class CertificateLightbox {
       });
     });
 
-    // Close button
     this.closeBtn?.addEventListener('click', () => this.close());
 
-    // Close on backdrop click
     this.lightbox.addEventListener('click', (e) => {
       if (e.target === this.lightbox) this.close();
     });
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') this.close();
     });
@@ -622,7 +595,7 @@ class CertificateLightbox {
 }
 
 // =============================================
-// SMOOTH ANCHOR SCROLL (enhanced)
+// SMOOTH ANCHOR SCROLL
 // =============================================
 class SmoothAnchors {
   constructor() {
@@ -647,11 +620,13 @@ class SmoothAnchors {
 }
 
 // =============================================
-// FORM HANDLING
+// CONTACT FORM — Dual-mode: Spring Boot API then Formspree fallback
 // =============================================
 class ContactForm {
   constructor() {
     this.form = document.getElementById('contactForm');
+    this.backendUrl = 'http://localhost:8080/api/contact';
+    this.formspreeUrl = 'https://formspree.io/f/xqapvqkv';
     this.init();
   }
 
@@ -664,15 +639,29 @@ class ContactForm {
       submitBtn.disabled = true;
 
       try {
-        const data = new FormData(this.form);
-        const response = await fetch(this.form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
+        // Try Spring Boot backend first
+        const formData = new FormData(this.form);
+        const jsonData = {};
+        formData.forEach((value, key) => { jsonData[key] = value; });
+
+        let response;
+        try {
+          response = await fetch(this.backendUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData),
+          });
+        } catch (e) {
+          // Backend not available — fall back to Formspree
+          const data = new FormData(this.form);
+          response = await fetch(this.formspreeUrl, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' },
+          });
+        }
 
         if (response.ok) {
-          // Show success message
           const formContainer = this.form.parentElement;
           const successMsg = document.createElement('div');
           successMsg.style.cssText = `
@@ -697,7 +686,6 @@ class ContactForm {
         }
       } catch (err) {
         submitBtn.innerHTML = originalHTML;
-        // Show error inline
         const errorMsg = document.createElement('div');
         errorMsg.style.cssText = `
           padding: 12px 16px;
@@ -725,12 +713,10 @@ class ContactForm {
 // INITIALIZE EVERYTHING
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize core features
   new ParticleSystem();
   new ScrollProgress();
   new BackToTop();
 
-  // Initialize typing effect
   const typingElement = document.querySelector('.hero-typing');
   if (typingElement) {
     new TypingEffect(typingElement, [
@@ -742,13 +728,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ]);
   }
 
-  // Initialize scroll-based features
   setTimeout(() => {
     new ScrollReveal();
     new CounterAnimation();
   }, 100);
 
-  // Initialize interaction features
   new Navigation();
   new ThemeToggle();
   new ButtonRipple();
@@ -757,7 +741,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new SmoothAnchors();
   new ContactForm();
 
-  // Initialize mouse follower (only on non-touch devices)
   if (!('ontouchstart' in window)) {
     setTimeout(() => new MouseFollower(), 200);
   }

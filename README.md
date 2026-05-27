@@ -3,7 +3,7 @@
 # 👨‍💻 Suraj Dobale — Full Stack Java Developer
 
 [![GitHub](https://img.shields.io/badge/GitHub-SURYaDob-6c63ff?style=for-the-badge&logo=github)](https://github.com/SURYaDob)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-porfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-portfolio)
 [![Resume](https://img.shields.io/badge/Resume-Download-ff6b6b?style=for-the-badge&logo=microsoftword)](Suraj_Dobale_Resume.docx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/suraj-dobale-b713b91a6/)
 
@@ -16,7 +16,7 @@
 ## 📸 Portfolio Preview
 
 <div align="center">
-  <a href="https://SURYaDob.github.io/resume-porfolio" target="_blank" rel="noopener noreferrer">
+  <a href="https://SURYaDob.github.io/resume-portfolio" target="_blank" rel="noopener noreferrer">
     <img src="screenshots/full-page.png" alt="Suraj Dobale Portfolio - Full Preview" width="95%" style="border-radius: 12px; border: 1px solid rgba(108, 99, 255, 0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3);" />
   </a>
   <br/>
@@ -75,7 +75,7 @@ Download my resume in MS Word format:
 
 ## 🔗 Quick Links
 
-- **Portfolio Website:** [SURYaDob.github.io/resume-porfolio](https://SURYaDob.github.io/resume-porfolio)
+- **Portfolio Website:** [SURYaDob.github.io/resume-porfolio](https://SURYaDob.github.io/resume-portfolio)
 - **GitHub Profile:** [github.com/SURYaDob](https://github.com/SURYaDob)
 - **Email:** [surajdobale29@gmail.com](mailto:surajdobale29@gmail.com)
 - **Phone:** +91 9172567835
@@ -95,7 +95,7 @@ For the contact form to send messages automatically (instead of opening your ema
 ### Step 2: Deploy Backend to Render
 1. Create a free account at [render.com](https://render.com) (GitHub login works)
 2. Click **New +** → **Web Service**
-3. Connect your GitHub repo: `SURYaDob/resume-porfolio`
+3. Connect your GitHub repo: `SURYaDob/resume-portfolio`
 4. Set these values:
    - **Name:** `suraj-portfolio-api`
    - **Root Directory:** `backend`

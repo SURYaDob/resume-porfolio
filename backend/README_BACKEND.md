@@ -12,7 +12,7 @@ A **Spring Boot 3.2** REST API backend for Suraj Dobale's developer portfolio. B
 
 ```bash
 # Clone and navigate to the backend
-cd resume-porfolio/backend
+cd resume-portfolio/backend
 
 # Build and run
 ./mvnw spring-boot:run

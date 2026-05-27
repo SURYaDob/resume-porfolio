@@ -130,7 +130,7 @@ public class EmailService {
                                     <td style="background-color:#f8f9fa;padding:20px 40px;text-align:center;border-top:1px solid #eee;">
                                         <p style="margin:0;font-size:12px;color:#999;">
                                             Sent from <strong>Suraj Dobale's Portfolio</strong> &middot;
-                                            <a href="https://suryadob.github.io/resume-porfolio" style="color:#667eea;text-decoration:none;">suryadob.github.io/resume-porfolio</a>
+                                            <a href="https://suryadob.github.io/resume-portfolio" style="color:#667eea;text-decoration:none;">suryadob.github.io/resume-portfolio</a>
                                         </p>
                                     </td>
                                 </tr>

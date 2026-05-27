@@ -5,7 +5,7 @@ services:
   - type: web
     name: suraj-portfolio-api
     runtime: docker
-    repo: https://github.com/SURYaDob/resume-porfolio
+    repo: https://github.com/SURYaDob/resume-portfolio
     rootDir: backend
     dockerfilePath: ./Dockerfile
     envVars:

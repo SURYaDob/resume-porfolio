@@ -331,7 +331,7 @@ class MouseFollower {
     };
     animate();
 
-    document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .cert-card').forEach((el) => {
+    document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .cert-card, .avatar-frame').forEach((el) => {
       el.addEventListener('mouseenter', () => {
         this.follower.style.width = '36px';
         this.follower.style.height = '36px';
@@ -694,29 +694,67 @@ class ButtonRipple {
 }
 
 // =============================================
-// PROJECT CARD 3D TILT EFFECT
+// 3D TILT & PARALLAX EFFECT
+// Applies to: Project Cards (strong), Certificate Cards (moderate), Avatar Frame (gentle)
 // =============================================
 class TiltEffect {
   constructor() {
+    // Project cards — existing strong tilt
     document.querySelectorAll('.project-card').forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
-      });
+      this.addTilt(card, { intensity: 15, translateY: -8, scale: 1.02 });
+    });
 
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
-        card.style.transition = 'transform 0.5s ease';
-        setTimeout(() => {
-          card.style.transition = '';
-        }, 500);
-      });
+    // Certificate cards — moderate tilt
+    document.querySelectorAll('.cert-card').forEach((card) => {
+      this.addTilt(card, { intensity: 20, translateY: -4, scale: 1.02 });
+    });
+
+    // Avatar frame — gentle tilt with extra glow depth
+    const avatar = document.querySelector('.avatar-frame');
+    if (avatar) {
+      this.addTilt(avatar, { intensity: 25, translateY: 0, scale: 1 });
+
+      // Also tilt the inner placeholder slightly more for a parallax feel
+      const placeholder = avatar.querySelector('.avatar-placeholder');
+      if (placeholder) {
+        let tiltX = 0, tiltY = 0;
+        avatar.addEventListener('mousemove', (e) => {
+          const rect = avatar.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          tiltX = (y - centerY) / 30;
+          tiltY = (centerX - x) / 30;
+          placeholder.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.08)`;
+        });
+        avatar.addEventListener('mouseleave', () => {
+          placeholder.style.transform = '';
+        });
+      }
+    }
+  }
+
+  addTilt(element, opts) {
+    const { intensity, translateY, scale } = opts;
+
+    element.addEventListener('mousemove', (e) => {
+      const rect = element.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / intensity;
+      const rotateY = (centerX - x) / intensity;
+      element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(${translateY}px) scale(${scale})`;
+    });
+
+    element.addEventListener('mouseleave', () => {
+      element.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)`;
+      element.style.transition = 'transform 0.5s ease';
+      setTimeout(() => {
+        element.style.transition = '';
+      }, 500);
     });
   }
 }

@@ -9,7 +9,7 @@ Live demo links will be added to your portfolio once deployed.
 
 | Project | Platform | DB | URL Pattern | Free Tier Details |
 |---------|----------|:--:|-------------|-------------------|
-| **Task Manager** | [Render](https://render.com) | H2 (in-memory) | `https://task-manager.onrender.com` | 512MB RAM, sleeps after 15min |
+| **Task Manager** | [Render](https://render.com) | H2 (in-memory) | `https://task-manager-hnk6.onrender.com` | 512MB RAM, sleeps after 15min |
 | **Laundry System** | [Koyeb](https://koyeb.com) | H2 (in-memory) | `https://laundry-system.koyeb.app` | 512MB RAM, always-on! |
 | **CDAC Enterprise** | [Fly.io](https://fly.io) | MySQL/PostgreSQL | `https://cdac-enterprise.fly.dev` | 256MB RAM, 3GB storage |
 
@@ -44,7 +44,7 @@ Live demo links will be added to your portfolio once deployed.
    - Wait for the build (3-5 minutes)
 
 3. **Verify:**
-   - Visit `https://task-manager.onrender.com`
+   - Visit `https://task-manager-hnk6.onrender.com`
    - The app will wake up after first request (takes ~30s cold start)
    - Register a test account to verify DB works
 
@@ -158,7 +158,7 @@ After each service is deployed, update the URLs in `index.html`:
 </a>
 
 <!-- To: -->
-<a href="https://task-manager.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-demo">
+<a href="https://task-manager-hnk6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-demo">
   Live Demo
 </a>
 ```

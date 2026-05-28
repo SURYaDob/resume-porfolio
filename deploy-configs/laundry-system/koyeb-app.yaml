@@ -1,0 +1,20 @@
+# Koyeb Deployment Configuration
+# Laundry System - Spring Boot + H2 (no external DB needed)
+#
+# How to deploy:
+# 1. Push the Dockerfile to your laundry-system repo
+# 2. Install Koyeb CLI: https://www.koyeb.com/docs/cli/installation
+# 3. Run: koyeb login
+# 4. Run: koyeb app init laundry-system
+# 5. Deploy with Docker:
+#    koyeb service create laundry-system \
+#      --docker suryadob/laundry-system:latest \
+#      --ports 8080:http
+#
+# Or use the Koyeb dashboard:
+# 1. Go to app.koyeb.com → Create App
+# 2. Select "Docker" → Point to GitHub repo
+# 3. Set: Dockerfile path = ./Dockerfile
+# 4. Set: Port = 8080
+# 5. Set env: SPRING_PROFILES_ACTIVE = dev
+# 6. Deploy (free tier, always-on!)

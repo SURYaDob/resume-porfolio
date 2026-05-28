@@ -1280,6 +1280,13 @@ ul {
   transition: opacity 0.4s ease;
 }
 
+.overlay-links-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .project-card:hover .project-screenshot-overlay {
   opacity: 1;
 }
@@ -1287,18 +1294,18 @@ ul {
 .overlay-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
+  gap: 8px;
+  padding: 12px 22px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   border-radius: 50px;
   color: white;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transform: translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover .overlay-link {
@@ -1311,8 +1318,31 @@ ul {
 }
 
 .overlay-link svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+.overlay-link-demo {
+  background: rgba(0, 212, 170, 0.25);
+  border-color: rgba(0, 212, 170, 0.4);
+}
+
+.overlay-link-demo:hover {
+  background: rgba(0, 212, 170, 0.4);
+  border-color: rgba(0, 212, 170, 0.6);
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
+}
+
+/* Galaxy theme: overlay demo links use gold accent */
+[data-theme="galaxy"] .overlay-link-demo {
+  background: rgba(255, 215, 0, 0.25);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+[data-theme="galaxy"] .overlay-link-demo:hover {
+  background: rgba(255, 215, 0, 0.4);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
 /* ----- Project Body ----- */
@@ -1410,11 +1440,21 @@ ul {
   color: var(--secondary);
   border-color: rgba(108, 99, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.15);}.project-links a:active {
+  transform: translateY(0);
 }
 
-.project-links a:active {
-  transform: translateY(0);
+.project-links .btn-demo {
+  color: var(--secondary);
+  border-color: rgba(0, 212, 170, 0.2);
+  background: rgba(0, 212, 170, 0.06);
+}
+
+.project-links .btn-demo:hover {
+  background: rgba(0, 212, 170, 0.15);
+  border-color: rgba(0, 212, 170, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 212, 170, 0.2);
+  color: var(--secondary-light);
 }
 
 /* ----- Education / Timeline Section ----- */

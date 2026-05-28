@@ -10,7 +10,7 @@ Live demo links will be added to your portfolio once deployed.
 | Project | Platform | DB | URL Pattern | Free Tier Details |
 |---------|----------|:--:|-------------|-------------------|
 | **Task Manager** | [Render](https://render.com) | H2 (in-memory) | `https://task-manager-hnk6.onrender.com` | 512MB RAM, sleeps after 15min |
-| **Laundry System** | [Koyeb](https://koyeb.com) | H2 (in-memory) | `https://laundry-system-gzzc.onrender.com` | 512MB RAM, always-on! |
+| **Laundry System** | [Render](https://render.com) | H2 (in-memory) | `https://laundry-system-gzzc.onrender.com` | 512MB RAM, sleeps after 15min |
 | **CDAC Enterprise** | [Fly.io](https://fly.io) | MySQL/PostgreSQL | `https://cdac-enterprise.fly.dev` | 256MB RAM, 3GB storage |
 
 ---
@@ -50,40 +50,32 @@ Live demo links will be added to your portfolio once deployed.
 
 ---
 
-## 2️⃣ Deploy Laundry System on Koyeb
+## 2️⃣ Deploy Laundry System on Render
 
 ### Prerequisites
-- A [Koyeb](https://koyeb.com) account (sign up with GitHub)
-- The Dockerfile in your repo
+- Your [Render](https://render.com) account (already set up from Task Manager)
+- The Dockerfile pushed to your laundry-system repo
 
 ### Steps
 
-1. **Add deploy files to your repo:**
+1. **Add Dockerfile to your repo:**
    ```bash
-   cp deploy-configs/laundry-system/Dockerfile /path/to/laundry-system/
-   
-   cd /path/to/laundry-system
-   git add Dockerfile
-   git commit -m "Add Dockerfile for Koyeb deployment"
-   git push origin master
+   # Uses multi-stage build with maven:3.9-eclipse-temurin-17 (no mvnw needed)
    ```
 
-2. **In Koyeb Dashboard:**
-   - Go to [app.koyeb.com](https://app.koyeb.com)
-   - Click **Create App**
-   - Choose **GitHub** → Authorize → Select `SURYaDob/laundry-system`
-   - **Builder:** Docker
-   - **Dockerfile path:** `./Dockerfile`
-   - **Port:** `8080`
-   - **Environment variables:**
-     - `SPRING_PROFILES_ACTIVE` = `dev`
-   - **App name:** `laundry-system`
-   - Click **Deploy**
+2. **In Render Dashboard:**
+   - Click **New +** → **Web Service**
+   - Connect to `SURYaDob/laundry-system` (master branch)
+   - **Name:** `laundry-system`
+   - **Runtime:** Docker (auto-detected)
+   - **Plan:** Free
+   - **Environment variables:** `SPRING_PROFILES_ACTIVE` = `dev`
+   - Click **Create Web Service**
 
 3. **Verify:**
    - Visit `https://laundry-system-gzzc.onrender.com`
-   - Koyeb stays always-on (no cold starts!)
-   - Login with default credentials if the app has seeded data
+   - First load takes ~30s (cold start)
+   - Uses H2 in-memory DB (data resets on restart)
 
 ---
 
@@ -177,7 +169,7 @@ To persist data, upgrade Render to the Starter plan ($7/month) or use a free MyS
 | Issue | Fix |
 |-------|-----|
 | Render app stuck "Building" | Check build logs for Maven errors. Run `mvn clean package` locally first |
-| Koyeb deployment fails | Ensure Dockerfile is at repo root. Check Docker build logs |
+| Docker build fails | Check the repo has a Dockerfile at root. Ensure Maven build image is available |
 | Fly.io app won't connect | Check `flyctl logs`. Ensure DB connection string is correct |
 | Cold start too slow | This is normal on free tier. First request takes 15-45 seconds |
 | App crashes on startup | Verify Java 17 compatibility. Check environment variables |

@@ -4,7 +4,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-SURYaDob-6c63ff?style=for-the-badge&logo=github)](https://github.com/SURYaDob)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-00d4aa?style=for-the-badge&logo=react)](https://SURYaDob.github.io/resume-portfolio)
-[![Resume](https://img.shields.io/badge/Resume-Download-ff6b6b?style=for-the-badge&logo=adobe)](SURAJ_DOBALE_RESUME.docx)
+[![Resume PDF](https://img.shields.io/badge/Resume-PDF-ff6b6b?style=for-the-badge&logo=adobe)](SURAJ_DOBALE_RESUME.pdf) [![Resume DOCX](https://img.shields.io/badge/Resume-DOCX-2ea44f?style=for-the-badge&logo=microsoftword)](SURAJ_DOBALE_RESUME.docx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/suraj-dobale-b713b91a6/)
 
 **Java · Spring Boot · Hibernate · MySQL · HTML/CSS · JavaScript**
@@ -36,7 +36,8 @@ This repository contains my professional portfolio website and ATS-optimized res
 | `index.html` | Interactive portfolio website (dark theme, particle effects, responsive) |
 | `css/style.css` | Complete design system with animations and responsive layout |
 | `js/main.js` | Interactive features (particles, typing effect, scroll animations, dark mode) |
-| `SURAJ_DOBALE_RESUME.docx` | ATS-optimized resume PDF — ready to download |
+| `SURAJ_DOBALE_RESUME.pdf` | ATS-optimized resume PDF — ready to download |
+| `SURAJ_DOBALE_RESUME.docx` | ATS-optimized resume DOCX — editable format |
 
 ---
 
@@ -69,7 +70,8 @@ This repository contains my professional portfolio website and ATS-optimized res
 ## 📄 Resume
 
 Download my resume in MS Word format:  
-📄 [`SURAJ_DOBALE_RESUME.docx`](SURAJ_DOBALE_RESUME.docx)
+📄 [`SURAJ_DOBALE_RESUME.pdf`](SURAJ_DOBALE_RESUME.pdf) — PDF (preferred)  
+📄 [`SURAJ_DOBALE_RESUME.docx`](SURAJ_DOBALE_RESUME.docx) — DOCX (editable)
 
 ---
 
